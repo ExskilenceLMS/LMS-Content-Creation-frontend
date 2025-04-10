@@ -58,7 +58,7 @@ function AssignBatch() {
       try {
         const payload = { ...formData, course_id: selectedCourse.course_id };
         console.log(payload)
-        navigate('/day-wise-group', {
+        navigate('/daywise-group', {
           state: {
             data: payload,
           }

@@ -785,7 +785,7 @@ const [sqldata, setsqlData] = useState({});
               setTable(jsonData.Table);
               setsqlTags(jsonData.Tags || []);
               setsqlHints(jsonData.Hints.map((ex) => Object.values(ex)[0]));
-              setsqlExplain(jsonData.Explanations.map((ex) => Object.values(ex)[0]));
+              setsqlExplain(jsonData.Explanations? jsonData.Explanations.map((ex) => Object.values(ex)[0]) : jsonData.Expl.map((ex) => Object.values(ex)[0]));
               const split= jsonData.TestCases.slice(0, -1)
               setSQLTestCases(split.map((hint) => Object.values(hint)[0]));
             }
@@ -804,7 +804,8 @@ const [sqldata, setsqlData] = useState({});
             setMCQExplanation(jsonData.Explanation);
         setSelectedTemplate(jsonData.Template);
            }
-            setSelectedDifficulty(jsonData.level);
+            setSelectedDifficulty(jsonData.Level? jsonData.Level: jsonData.level? jsonData.level:"level3");
+            console.log('hello')
       }
      else{
       if(contentType==="MCQ"){
@@ -1672,7 +1673,7 @@ const [sqldata, setsqlData] = useState({});
                         htmlFor="chooseContentType"
                         className="form-label fs-6 ms-2"
                       >
-                        Enter Time :
+                        Enter Time in minutes :
                       </label>
                       <input
                       type="number"
@@ -1760,7 +1761,7 @@ const [sqldata, setsqlData] = useState({});
                         htmlFor="chooseContentType"
                         className="form-label fs-6 ms-2"
                       >
-                        Enter Time :
+                        Enter Time in minutes :
                       </label>
                       <input
                       type="number"
@@ -1816,7 +1817,7 @@ const [sqldata, setsqlData] = useState({});
                                 htmlFor="chooseContentType"
                                 className="form-label fs-6 ms-2"
                               >
-                                Enter Time :
+                                Enter Time in minutes :
                               </label>
                               <input
                               type="number"

@@ -16,7 +16,7 @@ const AppRoutes = () => {
       <Route path="/content-creation" element={<Contentcreation />} />
       <Route path="/subject-plan" element={<CreateSubjectPlan/>}/>
       <Route path="/reorder-content" element={<ReorderContent/>}/>
-      <Route path='/day-wise-group' element={<DayWiseGroup/>}/>
+      <Route path='/daywise-group' element={<DayWiseGroup/>}/>
     </Routes>
   );
 };
